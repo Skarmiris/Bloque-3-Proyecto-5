@@ -1,6 +1,6 @@
 .completed {
     text-decoration: line-through;
-    color: gray;
+    color: rgb(139, 139, 139);
   }
 
   .id-tarea {

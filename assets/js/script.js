@@ -18,13 +18,10 @@ function ListaRealizada() {
         const tareaHtml = `
           <li id="${tarea.id}">
             <label>${tarea.tareaRealiza}</label> 
-            <input type="checkbox" onclick="marcarTarea(${tarea.id})" >
+            <input type="checkbox" onclick="marcarTarea(${tarea.id})" ${tarea.completed ? "checked" :""}>
             <button onclick="borrarTarea(${tarea.id})">Borrar</button> 
           </li>`;
         listaHtml += tareaHtml;
-        if (tarea.completed) {
-            checkbox.checked = true;
-          }
     });
     listTareas.innerHTML = listaHtml;
     totalTareas.textContent = Tareas.length;
