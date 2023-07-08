@@ -30,12 +30,12 @@ function ListaRealizada() {
 
 function agregarTarea() {
     const inputTarea = document.getElementById("inputTarea"); 
-    const descripcion = inputTarea.value.trim();
+    const agregar = inputTarea.value.trim();
 
-    if (descripcion !== "") {
+    if (agregar !== "") {
         const id = Tareas.length + 1;
         const nuevaTarea = {
-            id: id, tareaRealiza: descripcion,
+            id: id, tareaRealiza: agregar,
             completed: false
         };
 
