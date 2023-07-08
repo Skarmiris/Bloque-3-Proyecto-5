@@ -1,9 +1,9 @@
 
 
 let Tareas = [
-    { id: 1, description: "Lavar la ropa", completed: false },
-    { id: 2, description: "Pasear al perro", completed: false },
-    { id: 3, description: "Bañar al tigre", completed: false }
+    { id: 1, tareaRealiza: "Lavar la ropa", completed: false },
+    { id: 2, tareaRealiza: "Pasear al perro", completed: false },
+    { id: 3, tareaRealiza: "Bañar al tigre", completed: false }
 ];
 
 const listTareas = document.getElementById("listaTareas");
@@ -17,11 +17,14 @@ function ListaRealizada() {
     Tareas.forEach((tarea) => {
         const tareaHtml = `
           <li id="${tarea.id}">
-            <label>${tarea.description}</label> 
-            <input type="checkbox" onclick="marcarTarea(${tarea.id})" ${tarea.completed ? 'checked' : ''}>
-            <button onclick="borrarTarea(${tarea.id})">Borrar</button>
+            <label>${tarea.tareaRealiza}</label> 
+            <input type="checkbox" onclick="marcarTarea(${tarea.id})" >
+            <button onclick="borrarTarea(${tarea.id})">Borrar</button> 
           </li>`;
         listaHtml += tareaHtml;
+        if (tarea.completed) {
+            checkbox.checked = true;
+          }
     });
     listTareas.innerHTML = listaHtml;
     totalTareas.textContent = Tareas.length;
@@ -35,7 +38,7 @@ function agregarTarea() {
     if (descripcion !== "") {
         const id = Tareas.length + 1;
         const nuevaTarea = {
-            id: id, description: descripcion,
+            id: id, tareaRealiza: descripcion,
             completed: false
         };
 
