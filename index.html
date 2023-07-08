@@ -12,10 +12,33 @@
 <body>
 
     <main>
+        <h1>Todo List</h1>
+        <div>
+          <h2>Resumen de Tareas:</h2>
+          <p>Total de Tareas: <span id="totalTareas">0</span></p>
+          <p>Total de Tareas Realizadas: <span id="totalTareasRealizadas">0</span></p>
+        </div>
+        <hr>
+        <div>
+          <h2>Agregar Nueva Tarea:</h2>
+          <input type="text" id="inputTarea" placeholder="Ingrese una nueva tarea">
+          <button id="presBtn" onclick="agregarTarea()">Agregar Tarea</button>
+        </div>
+        <hr>
+        <div class="col-12">
+              <div class="id-tarea">
+                <h2>Lista de Tareas:</h2>
+                <p class="col-2"><strong>ID</strong></p>
+                <p class="col-2"><strong>Tarea</strong></p>
+                <div>
+              <ul id="listaTareas"></ul>
+            </div>
+          </div>
+      
+        </div>
     </main>
 
     <script src="./assets/js/script.js"></script>
-    <!--todo esto es para enlazar js con el html es como el de css-->
 </body>
 
 </html>
