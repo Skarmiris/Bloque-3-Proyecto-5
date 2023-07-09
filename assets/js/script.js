@@ -6,19 +6,20 @@ let Tareas = [
     { id: 3, tareaRealiza: "Bañar al tigre", completed: false }
 ];
 
-const listTareas = document.getElementById("listaTareas");
-const totalTareas = document.getElementById("totalTareas");
-const totalTareasRealizadas = document.getElementById("totalTareasRealizadas");
-const presBtn = document.getElementById("presBtn");
+let listTareas = document.getElementById("listaTareas");
+let totalTareas = document.getElementById("totalTareas");
+let totalTareasRealizadas = document.getElementById("totalTareasRealizadas");
+let presBtn = document.getElementById("presBtn");
 
 function ListaRealizada() {
     let listaHtml = "";
 
     Tareas.forEach((tarea) => {
+        const checkbox  = tarea.completed ? "checked" : "";
         const tareaHtml = `
           <li id="${tarea.id}">
             <label>${tarea.tareaRealiza}</label> 
-            <input type="checkbox" onclick="marcarTarea(${tarea.id})" ${tarea.completed ? "checked" :""}>
+            <input type="checkbox" onclick="marcarTarea(${tarea.id})" ${checkbox }>
             <button onclick="borrarTarea(${tarea.id})">Borrar</button> 
           </li>`;
         listaHtml += tareaHtml;
